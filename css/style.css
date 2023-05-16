@@ -1,0 +1,161 @@
+@import url('https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@700&family=Lexend+Deca&display=swap');
+
+:root {
+
+    /* cards */
+    --clr-primary-orange: hsl(31, 77%, 52%);
+    --clr-primary-light-blue: hsl(184, 100%, 22%);
+    --clr-primary-dark-blue: hsl(179, 100%, 13%);
+
+    /* paragraphs */
+    --clr-neutral-trans-white: hsla(0, 0%, 100%, 0.75);
+
+    /* backgrounds headings and buttons */
+    --clr-neutral-light-grey: hsl(0, 0%, 95%);
+
+    /* fonts */
+    --ff-primary: 'Lexend Deca', sans-serif;
+    --ff-headings: 'Big Shoulders Display', cursive;
+    --fw-regular: 400;
+    --fw-bold: 700;
+}
+
+/* CSS RESET */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 62.5%;
+}
+
+a {
+    text-decoration: none;
+}
+
+body {
+    background-color: var(--clr-neutral-light-grey);
+    font-size: 1.5rem;
+    font-family: var(--ff-primary);
+    font-weight: var(--fw-regular);
+    min-height: 100vh;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    margin: 9rem 2rem;
+}
+
+.card {
+    flex-basis: 310px;
+}
+
+.card__content {
+    padding: 4rem 5rem;
+}
+
+.card__content img {
+    display: block;
+    margin-bottom: 3rem;
+}
+
+.card__title {
+    color: var(--clr-neutral-light-grey);
+    font-family: var(--ff-headings);
+    font-weight: var(--fw-bold);
+    font-size: 4rem;
+    margin-bottom: 3rem;
+    text-transform: uppercase;
+}
+
+.card__details {
+    color: var(--clr-neutral-trans-white);
+    line-height: 1.7;
+    margin-bottom: 3rem;
+}
+
+.button {
+    background-color: var(--clr-neutral-light-grey);
+    border: 2px solid var(--clr-neutral-light-grey);
+    border-radius: 5rem;
+    display: inline-block;
+    font-family: var(--ff-primary);
+    font-size: 1.5rem;
+    font-weight: var(--fw-regular);
+    margin-bottom: 1rem;
+    padding: 1.3rem 3rem;
+}
+
+
+/* Card 1 */
+.card:nth-child(1) {
+background-color: var(--clr-primary-orange);
+border-radius: 1rem 1rem 0 0;
+}
+
+/* Card 2 */
+.card:nth-child(2) {
+background-color: var(--clr-primary-light-blue);
+}
+
+/* Card 3 */
+.card:nth-child(3) {
+background-color: var(--clr-primary-dark-blue);
+border-radius: 0 0 1rem 1rem;
+}
+
+/* Button 1 */
+.card:nth-child(1) .button {
+    color: var(--clr-primary-orange);
+}
+
+/* Button 2 */
+.card:nth-child(2) .button {
+    color: var(--clr-primary-light-blue);
+}
+
+/* Button 3 */
+.card:nth-child(3) .button {
+    color: var(--clr-primary-dark-blue);
+}
+
+/* Button states */
+.card:nth-child(1) .button:hover,
+.card:nth-child(1) .button:focus,
+.card:nth-child(2) .button:hover,
+.card:nth-child(2) .button:focus,
+.card:nth-child(3) .button:hover,
+.card:nth-child(3) .button:focus {
+    background-color: rgba(1, 1, 1, 0);
+    color: var(--clr-neutral-light-grey);
+    cursor: pointer;
+    outline: none;
+}
+
+
+@media screen and (min-width: 992px) {
+    .container {
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .card__details {
+        margin-bottom: 10rem;
+    }
+
+    .card:nth-child(1) {
+        border-radius: 1rem 0 0 1rem;
+    }
+
+    .card:nth-child(3) {
+        border-radius: 0 1rem 1rem 0;
+    }
+}
